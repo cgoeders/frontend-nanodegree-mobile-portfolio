@@ -2,16 +2,29 @@ module.exports = function(grunt) {
 	require('load-grunt-tasks')(grunt);
 
 	grunt.initConfig({
-		concat: {
+		copy: {
 			dist: {
-				src: 'src/js/*.js',
-				dest: 'dist/js/app.js'
+				files: [
+					{
+						expand: true, cwd: 'src', src: ['**'], dest: 'dist/'
+					}
+				]
 			}
-		}
+		},
 
+		'gh-pages': {
+			options: {
+				base: 'dist'
+			},
+
+			src: ['**']
+		}
 	});
 
+
 	grunt.registerTask('default', [
-		'concat'
+		'copy'
 	]);
+
+	grunt.registerTask('upload', [ 'copy', 'gh-pages'])
 }
