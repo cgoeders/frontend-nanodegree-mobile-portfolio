@@ -12,6 +12,12 @@ module.exports = function(grunt) {
 			}
 		},
 
+		open: {
+			dev: {
+				path: 'dist/index.html'
+			}
+		},
+
 		'gh-pages': {
 			options: {
 				base: 'dist'
@@ -23,8 +29,8 @@ module.exports = function(grunt) {
 
 
 	grunt.registerTask('default', [
-		'copy'
+		'copy', 'open'
 	]);
 
-	grunt.registerTask('upload', [ 'copy', 'gh-pages'])
+	grunt.registerTask('upload', [ 'default', 'gh-pages'])
 }
