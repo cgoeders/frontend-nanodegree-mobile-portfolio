@@ -14,7 +14,7 @@ module.exports = function(grunt) {
 
 		open: {
 			dev: {
-				path: 'dist/index.html'
+				path: 'dist/index.min.html'
 			}
 		},
 
