@@ -2,7 +2,7 @@ module.exports = function(grunt) {
 	require('load-grunt-tasks')(grunt);
 
 	grunt.initConfig({
-		// copy: {
+		// 'copy': {
 		// 	dist: {
 		// 		files: [
 		// 			{
@@ -14,7 +14,7 @@ module.exports = function(grunt) {
 
 		open: {
 			dev: {
-				path: 'dist/index.min.html'
+				path: 'dist/index.html'
 			}
 		},
 
@@ -22,8 +22,8 @@ module.exports = function(grunt) {
 			options: {
 				base: 'dist'
 			},
-
 			src: ['**']
+			// src: ['**']
 		},
 
 		'htmlmin': {
@@ -36,14 +36,14 @@ module.exports = function(grunt) {
 	    		//dictionary of files
 	    		files: {
 	        		//'destination': 'source'
-	        		'dist/index.min.html': 'src/index.html',
-	        		'dist/project-2048.min.html': 'src/project-2048.html',
-	        		'dist/project-mobile.min.html': 'src/project-mobile.html',
-	        		'dist/webperf.min.html': 'src/project-webperf.html',
-	        		'dist/views/pizza.min.html': 'src/views/pizza.html'
+	        		'dist/index.html': 'src/index.html',
+	        		'dist/project-2048.html': 'src/project-2048.html',
+	        		'dist/project-mobile.html': 'src/project-mobile.html',
+	        		'dist/project-webperf.html': 'src/project-webperf.html',
+	        		'dist/views/pizza.html': 'src/views/pizza.html'
 	    		}
 	    	}
-		},
+		}
 
 		// 'cssmin': {
 
@@ -58,7 +58,7 @@ module.exports = function(grunt) {
 
 
 	grunt.registerTask('default', [
-		//'copy', 
+		// 'copy', 
 		'htmlmin',
 		// 'cssmin',
 		'open'
