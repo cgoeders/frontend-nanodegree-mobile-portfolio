@@ -43,14 +43,23 @@ module.exports = function(grunt) {
 	        		'dist/views/pizza.html': 'src/views/pizza.html'
 	    		}
 	    	}
-		}
+		},
 
 		// 'cssmin': {
 
 
 		// }
 
-
+		'imagemin': {
+		    dynamic: {
+		      files: [{
+		        expand: true,                  // Enable dynamic expansion
+		        cwd: 'src/',                   // Src matches are relative to this path
+		        src: ['**/*.{png,jpg}'],   // Actual patterns to match
+		        dest: 'dist/'                  // Destination path prefix
+		      }]
+		    }
+		  }
 
 
 
@@ -61,6 +70,7 @@ module.exports = function(grunt) {
 		'copy', 
 		'htmlmin',
 		// 'cssmin',
+		'imagemin',
 		'open'
 
 	]);
