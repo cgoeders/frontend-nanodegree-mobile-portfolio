@@ -550,7 +550,7 @@ document.addEventListener('DOMContentLoaded', function() {
   var numCols = windowWidth / size;
   var numRows = windowHeight / size;
   var numPizzas = Math.ceil(numRows * numCols);
-  console.log(numPizzas);
+  console.log(numPizzas, innerWidth, innerHeight);
 
   var movingPizzas1 = document.getElementById('movingPizzas1');
   for (var i = 0; i < numPizzas; i++) {
