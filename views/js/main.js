@@ -545,14 +545,13 @@ document.addEventListener('DOMContentLoaded', function() {
   var cols = 8;
   var size = 256;
 
-  var pizzaDim = 200;
+  var pizzaDimX = 73.333;
+  var pizzaDimY = 100;
   var windowWidth = window.innerWidth;
   var windowHeight = window.innerHeight;
-  var windowWidth = screen.availWidth;
-  var windowHeight = screen.availHeight;
-  var numCols = windowWidth / pizzaDim;
-  var numRows = windowHeight / pizzaDim;
-  var numPizzas = Math.ceil(numRows * numCols);
+  var numCols = Math.ceil(windowWidth / pizzaDimX);
+  var numRows = Math.ceil(windowHeight / pizzaDimY);
+  var numPizzas = numRows * numCols;
   console.log(numPizzas, innerWidth, innerHeight);
 
   var movingPizzas1 = document.getElementById('movingPizzas1');
