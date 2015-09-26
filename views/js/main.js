@@ -545,16 +545,10 @@ document.addEventListener('DOMContentLoaded', function() {
   var cols = 8;
   var size = 256;
 
-  var pizzaDimX = 73.333;
-  var pizzaDimY = 100;
-  var windowWidth = window.innerWidth;
-  var windowHeight = window.innerHeight;
-  var numCols = Math.ceil(windowWidth / pizzaDimX);
-  var numRows = Math.ceil(windowHeight / pizzaDimY);
-  var numPizzas = numRows * numCols;
-  console.log(numPizzas, innerWidth, innerHeight);
-
+  //only create 40 pizzas at a time (instead of generating 200)
+  var numPizzas = 40;
   var movingPizzas1 = document.getElementById('movingPizzas1');
+
   for (var i = 0; i < numPizzas; i++) {
     var elem = document.createElement('img');
     elem.className = 'mover';
