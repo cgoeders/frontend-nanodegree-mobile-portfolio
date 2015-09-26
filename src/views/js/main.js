@@ -545,14 +545,17 @@ document.addEventListener('DOMContentLoaded', function() {
   var cols = 8;
   var size = 256;
 
-  var windowWidth = window.innerWidth;
-  var windowHeight = window.innerHeight;
-  var numCols = windowWidth / size;
-  var numRows = windowHeight / size;
-  var numPizzas = Math.ceil(numRows * numCols);
+  // var windowWidth = window.innerWidth;
+  // var windowHeight = window.innerHeight;
+  // var windowWidth = screen.availWidth;
+  // var windowHeight = screen.availHeight;
+  // var numCols = windowWidth / size;
+  // var numRows = windowHeight / size;
+  // var numPizzas = Math.ceil(numRows * numCols);
+  // console.log(numPizzas, innerWidth, innerHeight);
 
   var movingPizzas1 = document.getElementById('movingPizzas1');
-  for (var i = 0; i < numPizzas; i++) {
+  for (var i = 0; i < 50; i++) {
     var elem = document.createElement('img');
     elem.className = 'mover';
     elem.src = "images/pizza.png";
