@@ -26,6 +26,32 @@ module.exports = function(grunt) {
 			// src: ['**']
 		},
 
+
+//cssmin: {
+//   target: {
+//     files: [{
+//       expand: true,
+//       cwd: 'release/css',
+//       src: ['*.css', '!*.min.css'],
+//       dest: 'release/css',
+//       ext: '.min.css'
+//     }]
+//   }
+// }
+
+//uglify
+
+//combine into index.html
+
+//compress images
+
+//htmlmin
+
+//upload
+
+
+
+
 		'htmlmin': {
     		dist: { 
       			options: {
@@ -43,12 +69,7 @@ module.exports = function(grunt) {
 	        		'dist/views/pizza.html': 'src/views/pizza.html'
 	    		}
 	    	}
-		},
-
-		// 'cssmin': {
-
-
-		// }
+		}
 
 		// 'imagemin': {
 		//     dynamic: {
