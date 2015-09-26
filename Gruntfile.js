@@ -50,16 +50,16 @@ module.exports = function(grunt) {
 
 		// }
 
-		'imagemin': {
-		    dynamic: {
-		      files: [{
-		        expand: true,                  // Enable dynamic expansion
-		        cwd: 'src/',                   // Src matches are relative to this path
-		        src: ['**/*.{png,jpg}'],   // Actual patterns to match
-		        dest: 'dist/'                  // Destination path prefix
-		      }]
-		    }
-		  }
+		// 'imagemin': {
+		//     dynamic: {
+		//       files: [{
+		//         expand: true,                  // Enable dynamic expansion
+		//         cwd: 'src/',                   // Src matches are relative to this path
+		//         src: ['**/*.{png,jpg}'],   // Actual patterns to match
+		//         dest: 'dist/'                  // Destination path prefix
+		//       }]
+		//     }
+		//   }
 
 
 
@@ -70,7 +70,7 @@ module.exports = function(grunt) {
 		'copy', 
 		'htmlmin',
 		// 'cssmin',
-		'imagemin',
+		// 'imagemin',
 		'open'
 
 	]);
