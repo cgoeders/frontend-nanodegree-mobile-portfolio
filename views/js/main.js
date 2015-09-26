@@ -421,6 +421,33 @@ var resizePizzas = function(size) {
 
   changeSliderLabel(size);
 
+  // Returns the size difference to change a pizza element from one size to another. Called by changePizzaSlices(size).
+  // function determineDx (elem, size) {
+  //   var oldwidth = elem.offsetWidth;
+  //   var windowwidth = document.querySelector("#randomPizzas").offsetWidth;
+  //   var oldsize = oldwidth / windowwidth;
+
+  //   // TODO: change to 3 sizes? no more xl?
+  //   // Changes the slider value to a percent width
+  //   function sizeSwitcher (size) {
+  //     switch(size) {
+  //       case "1":
+  //         return 0.25;
+  //       case "2":
+  //         return 0.3333;
+  //       case "3":
+  //         return 0.5;
+  //       default:
+  //         console.log("bug in sizeSwitcher");
+  //     }
+  //   }
+
+  //   var newsize = sizeSwitcher(size);
+  //   var dx = (newsize - oldsize) * windowwidth;
+
+  //   return dx;
+  // }
+
   // Iterates through pizza elements on the page and changes their widths
   function changePizzaSizes(size) {
     switch (size) {
@@ -441,6 +468,8 @@ var resizePizzas = function(size) {
     var pizzaList = document.getElementsByClassName("randomPizzaContainer");
     
     for (var i = 0; i < pizzaList.length; i++) {
+      // var dx = determineDx(pizzaList[i], size);
+      // var newwidth = (pizzaList[i].offsetWidth + dx) + 'px';
       pizzaList[i].style.width = newWidth + "%";
     }
   }
@@ -516,14 +545,11 @@ document.addEventListener('DOMContentLoaded', function() {
   var cols = 8;
   var size = 256;
 
-  // var windowWidth = window.innerWidth;
-  // var windowHeight = window.innerHeight;
-  var windowWidth = screen.width;
-  var windowHeight = screen.height;
+  var windowWidth = window.innerWidth;
+  var windowHeight = window.innerHeight;
   var numCols = windowWidth / size;
   var numRows = windowHeight / size;
   var numPizzas = Math.ceil(numRows * numCols);
-  console.log(numPizzas);
 
   var movingPizzas1 = document.getElementById('movingPizzas1');
   for (var i = 0; i < numPizzas; i++) {
