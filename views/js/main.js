@@ -545,8 +545,10 @@ document.addEventListener('DOMContentLoaded', function() {
   var cols = 8;
   var size = 256;
 
-  var windowWidth = window.innerWidth;
-  var windowHeight = window.innerHeight;
+  // var windowWidth = window.innerWidth;
+  // var windowHeight = window.innerHeight;
+  var windowWidth = screen.availWidth;
+  var windowHeight = screen.availHeight;
   var numCols = windowWidth / size;
   var numRows = windowHeight / size;
   var numPizzas = Math.ceil(numRows * numCols);
