@@ -16,7 +16,8 @@ module.exports = function(grunt) {
 			my_target: {
 				files: {
 					'dist/js/perfmatters.js': 'src/js/perfmatters.js',
-					'dist/views/js/main.js': 'src/views/js/main.js'
+					'dist/views/js/main.js': 'src/views/js/main.js',
+					'dist/js/script.js': 'src/js/script.js'
 				}
 			}
 		},
