@@ -2,24 +2,42 @@ module.exports = function(grunt) {
 	require('load-grunt-tasks')(grunt);
 
 	grunt.initConfig({
-		'copy': {
-			dist: {
-				files: [
-					{
-						expand: true, cwd: 'src', src: ['**'], dest: 'dist/'
-					}
-				]
-			}
-		},
+		// 'copy': {
+		// 	  dist: {
+		// 		files: [
+		// 			{
+		// 				expand: true, cwd: 'src', src: ['**'], dest: 'dist/'
+		// 			}
+		// 		]
+		// 	}
+		// },
 
 		'uglify': {
 			my_target: {
 				files: {
 					'dist/js/perfmatters.js': 'src/js/perfmatters.js',
 					'dist/views/js/main.js': 'src/views/js/main.js',
-					'dist/js/script.js': 'src/js/script.js'
+					//'dist/js/script.js': 'src/js/script.js'
+					//above commented out; used to minify JS (from end of index.html)
 				}
 			}
+		},
+
+		'cssmin': {
+			target: {
+				// files: [{
+				// 	expand: true,
+				// 	cwd: 'src/',
+				// 	src: ['css/print.css', 'views/css/style.css', 'views/css/bootstrap-grid.css'],
+				// 	dest: 'dist/',
+				// 	ext: '.css'
+		  //   	}]
+		  		files: {
+		  			'dist/css/print-min.css': 'src/css/print.css',
+		  			'dist/views/css/bootstrap-grid-min.css': 'src/views/css/bootstrap-grid.css',
+		  			'dist/views/css/style-min.css': 'src/views/css/style.css'
+		  		}
+		  	}
 		},
 
 		'htmlmin': {
@@ -31,7 +49,8 @@ module.exports = function(grunt) {
 	    		
 	    		//dictionary of files
 	    		files: {
-	        		'dist/index.html': 'src/index.html',
+	        		// 'dist/index.html': 'src/index.html',
+	        		//above commented out; manually adding grunt's uglified JS to dist/index.html
 	        		'dist/project-2048.html': 'src/project-2048.html',
 	        		'dist/project-mobile.html': 'src/project-mobile.html',
 	        		'dist/project-webperf.html': 'src/project-webperf.html',
@@ -54,18 +73,6 @@ module.exports = function(grunt) {
 			// src: ['**']
 		}
 
-		// 'cssmin': {
-		//   target: {
-		//     files: [{
-		//       expand: true,
-		//       cwd: 'src/',
-		//       src: ['*.css', '!*.min.css'],
-		//       dest: 'release/css',
-		//       ext: '.min.css'
-		//     }]
-		//   }
-		// },
-
 		// 'imagemin': {
 		//     dynamic: {
 		//       files: [{
@@ -83,9 +90,10 @@ module.exports = function(grunt) {
 
 
 	grunt.registerTask('default', [
-		'copy', 
-		'uglify',
-		'htmlmin',
+		// 'copy', 
+		// 'uglify',
+		'cssmin',
+		// 'htmlmin',
 		'open'
 	]);
 
