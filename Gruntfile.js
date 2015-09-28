@@ -12,7 +12,34 @@ module.exports = function(grunt) {
 			}
 		},
 
-		open: {
+		'uglify': {
+			my_target: {
+				files: {
+					'dist/js/perfmatters.js': 'src/js/perfmatters.js',
+					'dist/views/js/main.js': 'src/views/js/main.js'
+				}
+			}
+		},
+
+		'htmlmin': {
+    		dist: { 
+      			options: {
+		        	removeComments: true,
+		        	collapseWhitespace: true
+	    		},
+	    		
+	    		//dictionary of files
+	    		files: {
+	        		'dist/index.html': 'src/index.html',
+	        		'dist/project-2048.html': 'src/project-2048.html',
+	        		'dist/project-mobile.html': 'src/project-mobile.html',
+	        		'dist/project-webperf.html': 'src/project-webperf.html',
+	        		'dist/views/pizza.html': 'src/views/pizza.html'
+	    		}
+	    	}
+		},
+
+		'open': {
 			dev: {
 				path: 'dist/index.html'
 			}
@@ -24,52 +51,19 @@ module.exports = function(grunt) {
 			},
 			src: ['**']
 			// src: ['**']
-		},
-
-
-//cssmin: {
-//   target: {
-//     files: [{
-//       expand: true,
-//       cwd: 'release/css',
-//       src: ['*.css', '!*.min.css'],
-//       dest: 'release/css',
-//       ext: '.min.css'
-//     }]
-//   }
-// }
-
-//uglify
-
-//combine into index.html
-
-//compress images
-
-//htmlmin
-
-//upload
-
-
-
-
-		'htmlmin': {
-    		dist: { 
-      			options: {
-		        	removeComments: true,
-		        	collapseWhitespace: true
-	    		},
-	    		
-	    		//dictionary of files
-	    		files: {
-	        		//'destination': 'source'
-	        		'dist/index.html': 'src/index.html',
-	        		'dist/project-2048.html': 'src/project-2048.html',
-	        		'dist/project-mobile.html': 'src/project-mobile.html',
-	        		'dist/project-webperf.html': 'src/project-webperf.html',
-	        		'dist/views/pizza.html': 'src/views/pizza.html'
-	    		}
-	    	}
 		}
+
+		// 'cssmin': {
+		//   target: {
+		//     files: [{
+		//       expand: true,
+		//       cwd: 'src/',
+		//       src: ['*.css', '!*.min.css'],
+		//       dest: 'release/css',
+		//       ext: '.min.css'
+		//     }]
+		//   }
+		// },
 
 		// 'imagemin': {
 		//     dynamic: {
@@ -80,7 +74,7 @@ module.exports = function(grunt) {
 		//         dest: 'dist/'                  // Destination path prefix
 		//       }]
 		//     }
-		//   }
+		// }
 
 
 
@@ -89,11 +83,9 @@ module.exports = function(grunt) {
 
 	grunt.registerTask('default', [
 		'copy', 
+		'uglify',
 		'htmlmin',
-		// 'cssmin',
-		// 'imagemin',
 		'open'
-
 	]);
 
 	grunt.registerTask('upload', ['default', 'gh-pages'])
