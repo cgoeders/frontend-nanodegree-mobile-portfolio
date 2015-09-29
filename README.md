@@ -1,4 +1,54 @@
-##TEST2
+#Project 4: Website Performance Optimization
+
+
+
+##Instructions
+
+My project is hosted via gh-pages at the following URL. Please open in Chrome. 
+http://cgoeders.github.io/frontend-nanodegree-mobile-portfolio/
+
+Commented source code for this project can be found on the master branch (under "src/"). Distribution code has been optimized (minified, stripped of most comments, compressed) and is found on the gh-pages branch. 
+
+Note: A list of resources used for this project (Resources.txt) is included on the master branch. 
+
+
+
+##Optimizations Performed
+
+###Part I: Achieving PageSpeed ≥ 90 on index.html
+- reduced file sizes by minifying HTML, CSS, and JS with grunt plug-ins (and manual insertion of minified CSS and JS into minified HTML)
+
+- compressed images using Adobe Photoshop and compressnow.com; created thumbnail-sized version of pizzeria.jpg
+
+- avoided render-blocking from CSS by inlining content of style.css
+
+- added "print" media query to prevent print.css from being render-blocking
+
+- added async attribute to Google Analytics and js/perfmatters scripts
+
+- added Web Font Loader to asynchronously load Google font
+
+###Part II: Achieving 60fps scrolling and <5ms pizza resizing on pizza.html
+- moved constant variables and/or some variable declarations outside loops (e.g. in changePizzaSizes(), updatePositions()) to avoid forced synchronous layout events
+
+- removed determineDx function (simplified calculation of new pizza widths)
+
+- replaced querySelectorAll() with getElementsByClassName() or getElementById()
+
+- added "will-change: transform" property to views/style.css to allow creation of new layers for "mover" pizzas
+
+- limited number of sliding pizzas created on page load (used 40 instead of 200)
+
+- minified HTML, CSS, and JS; compressed images
+
+
+
+
+
+
+
+
+==================================================================================
 
 
 
@@ -8,9 +58,7 @@
 
 
 
-
-
-
+[ORIGINAL PROJECT INSTRUCTIONS]
 
 ## Website Performance Optimization portfolio project
 
