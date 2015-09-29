@@ -25,13 +25,6 @@ module.exports = function(grunt) {
 
 		'cssmin': {
 			target: {
-				// files: [{
-				// 	expand: true,
-				// 	cwd: 'src/',
-				// 	src: ['css/print.css', 'views/css/style.css', 'views/css/bootstrap-grid.css'],
-				// 	dest: 'dist/',
-				// 	ext: '.css'
-		  //   	}]
 		  		files: {
 		  			'dist/css/print-min.css': 'src/css/print.css',
 		  			'dist/views/css/bootstrap-grid-min.css': 'src/views/css/bootstrap-grid.css',
@@ -70,29 +63,14 @@ module.exports = function(grunt) {
 				base: 'dist'
 			},
 			src: ['**']
-			// src: ['**']
 		}
-
-		// 'imagemin': {
-		//     dynamic: {
-		//       files: [{
-		//         expand: true,                  // Enable dynamic expansion
-		//         cwd: 'src/',                   // Src matches are relative to this path
-		//         src: ['**/*.{png,jpg}'],   // Actual patterns to match
-		//         dest: 'dist/'                  // Destination path prefix
-		//       }]
-		//     }
-		// }
-
-
-
 	});
 
 
 	grunt.registerTask('default', [
 		// 'copy', 
 		// 'uglify',
-		'cssmin',
+		// 'cssmin',
 		// 'htmlmin',
 		'open'
 	]);
