@@ -422,6 +422,7 @@ var resizePizzas = function(size) {
   changeSliderLabel(size);
 
   // iterate through pizza elements on the page and changes their widths
+  // note: no need for previous function (determineDx); use percentage values below instead
   function changePizzaSizes(size) {
     switch (size) {
       case "1":
@@ -434,7 +435,7 @@ var resizePizzas = function(size) {
         newWidth = 50;
         break;
       default:
-        console.log("big in sizeSwitcher");
+        console.log("bug in sizeSwitcher");
     }
 
     // use getElementsByClassName() instead of querySelectorAll(); more efficient

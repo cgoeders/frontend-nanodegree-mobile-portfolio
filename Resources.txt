@@ -11,4 +11,5 @@ Other Websites:
 --Ilya Grigorik's posts on Web Fundamentals (https://developers.google.com/web/fundamentals/performance/), particularly articles on "Render-Blocking CSS" and "Adding Interactivity with JavaScript"
 --Multiple grunt plug-in pages with examples (mostly GitHub, npmjs.com, and gruntjs.com): grunt-contrib-htmlmin, grunt-contrib-cssmin, grunt-contrib-copy, grunt-contrib-uglify, grunt-contrib-open, grunt-gh-pages, load-grunt-tasks
 --Adobe Photoshop and JPG image compression site (compressnow.com)
---
+--Web Font Loader (http://github.com/typekit/webfontloader)
+--MDN, W3Schools, CSStriggers.com
